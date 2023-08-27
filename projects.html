@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
 </head>
 <body>
-    <div class="matrix-bg"></div> <!-- Add the matrix background here -->
     <header>
         <nav>
             <div class="container">
@@ -24,9 +23,10 @@
         </nav>
     </header>
     <section class="container">
+        <canvas id="matrix-canvas"></canvas>
         <div class="project-card">
-            <h2>Textual-Conquest</h2>
-            <p>Textual-Conquest is a text adventure game inspired by Sid Meier's Civilization. It's a work in progress and will feature mechanics such as building, conquering civilizations, troops, combat, advancements, save files, and more.</p>
+            <h2 class="matrix-text-color">Textual-Conquest</h2>
+            <p class="matrix-text-color">Textual-Conquest is a text adventure game inspired by Sid Meier's Civilization. It's a work in progress and will feature mechanics such as building, conquering civilizations, troops, combat, advancements, save files, and more.</p>
         </div>
     </section>
     <footer>
@@ -35,6 +35,5 @@
         </div>
     </footer>
     <script src="scripts/matrix.js"></script>
-    <script src="scripts/script.js"></script>
 </body>
 </html>
