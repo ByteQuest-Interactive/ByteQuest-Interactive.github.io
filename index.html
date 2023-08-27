@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
 </head>
 <body>
-    <div class="matrix-bg"></div> <!-- Add the matrix background here -->
     <header>
         <nav>
             <div class="container">
@@ -23,16 +22,19 @@
             </div>
         </nav>
     </header>
-    <section id="about" class="container">
-        <h2>About Us</h2>
-        <p>We are a group of high school students passionate about game development. Our current project is called Textual-Conquest.</p>
+    <section id="about" class="matrix-section">
+        <div class="matrix-text">
+            <h2>About Us</h2>
+            <p>We are a group of high school students passionate about game development. Our current project is called Textual-Conquest.</p>
+        </div>
+        <canvas id="matrix-canvas"></canvas>
     </section>
+    
     <footer>
         <div class="container">
             <p>&copy; 2023 ByteQuest Interactive. All rights reserved.</p>
         </div>
     </footer>
     <script src="scripts/matrix.js"></script>
-    <script src="scripts/script.js"></script>
 </body>
 </html>
