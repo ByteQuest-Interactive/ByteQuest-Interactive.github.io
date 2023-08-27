@@ -1,16 +1,39 @@
-// matrix.js
-document.addEventListener("DOMContentLoaded", function () {
-    const matrixContainer = document.querySelector(".matrix-bg");
+// Initialising the matrix canvas
+var matrixCanvas = document.getElementById('matrix-canvas');
+var matrixCtx = matrixCanvas.getContext('2d');
 
-    const characters = "01"; // Characters to fall
-    const characterCount = 100; // Number of characters
+// Setting the width and height of the canvas
+matrixCanvas.width = window.innerWidth;
+matrixCanvas.height = window.innerHeight;
 
-    for (let i = 0; i < characterCount; i++) {
-        const character = document.createElement("span");
-        character.textContent = characters.charAt(Math.floor(Math.random() * characters.length));
-        character.style.left = `${Math.random() * 100}%`;
-        character.style.animationDuration = `${Math.random() * 5 + 2}s`;
-        character.style.animationDelay = `${Math.random() * 2}s`;
-        matrixContainer.appendChild(character);
+// Setting up the letters
+var matrixLetters = 'ABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZ';
+matrixLetters = matrixLetters.split('');
+
+// Setting up the columns
+var matrixFontSize = 10,
+    matrixColumns = matrixCanvas.width / matrixFontSize;
+
+// Setting up the drops
+var matrixDrops = [];
+for (var i = 0; i < matrixColumns; i++) {
+  matrixDrops[i] = 1;
+}
+
+// Setting up the draw function
+function drawMatrix() {
+  matrixCtx.fillStyle = 'rgba(0, 0, 0, .1)';
+  matrixCtx.fillRect(0, 0, matrixCanvas.width, matrixCanvas.height);
+  for (var i = 0; i < matrixDrops.length; i++) {
+    var text = matrixLetters[Math.floor(Math.random() * matrixLetters.length)];
+    matrixCtx.fillStyle = '#0f0';
+    matrixCtx.fillText(text, i * matrixFontSize, matrixDrops[i] * matrixFontSize);
+    matrixDrops[i]++;
+    if (matrixDrops[i] * matrixFontSize > matrixCanvas.height && Math.random() > .95) {
+      matrixDrops[i] = 0;
     }
-});
+  }
+}
+
+// Loop the matrix animation
+setInterval(drawMatrix, 33);
