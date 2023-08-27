@@ -7,7 +7,7 @@ body, h1, h2, h3, p, ul, li {
 body {
     font-family: 'Open Sans', Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f0f0f0;
+    background-color: #000;
 }
 
 .container {
@@ -26,44 +26,51 @@ header {
     height: 60px; /* Adjust the height as needed */
 }
 
-nav {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-}
-
 nav ul {
     list-style: none;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin-right: 20px; /* Added margin to align the navbar to the right */
 }
 
 nav a {
     text-decoration: none;
-    color: #fff;
+    color: #ccc; /* Change the color to a different shade of white */
     margin: 0 20px;
     transition: color 0.3s;
 }
 
 nav a:hover {
-    color: #666;
+    color: #999; /* Change the hover color accordingly */
 }
 
-section {
-    padding: 60px 0;
+/* ... (other styles) */
+
+.matrix-section {
+    position: relative;
+    overflow: hidden;
+    color: white;
+    height: calc(100vh - 120px); /* Subtract the footer height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#matrix-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.matrix-text {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
     text-align: center;
-    color: #333; /* Added text color */
-}
-
-.project-card {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
-    text-align: left;
 }
 
 footer {
@@ -75,32 +82,13 @@ footer {
     width: 100%;
     bottom: 0;
 }
-
-/* Matrix background animation */
-.matrix-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    pointer-events: none;
-    opacity: 0.5;
-}
-
-@keyframes matrixFall {
-    0% {
-        transform: translateY(-100%);
-    }
-    100% {
-        transform: translateY(100%);
-    }
-}
-
-.matrix-bg span {
-    position: absolute;
-    color: #00FF00; /* Green color */
-    font-size: 20px;
-    animation: matrixFall 6s linear infinite;
-    transform-origin: 50% 0;
+.project-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    text-align: left;
+    color: #333; /* Change the text color to a darker color */
+    margin-top: 20px;
 }
