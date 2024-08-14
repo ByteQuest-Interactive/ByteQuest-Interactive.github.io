@@ -19,11 +19,19 @@ body {
 header {
     background-color: #333;
     color: #fff;
-    padding: 10px 0;
+    padding: 20px 0;
 }
 
 .logo img {
-    height: 60px; /* Adjust the height as needed */
+    height: 80px; /* Adjust the height as needed */
+    margin-right: 10px; /* Add spacing between the logo and links */
+    margin-top: -5px;
+}
+
+.logo {
+    display: flex;
+    height: 100%;
+    margin-top: -2vh
 }
 
 nav ul {
@@ -33,14 +41,14 @@ nav ul {
     align-items: center;
 }
 
-nav a {
+nav .a {
     text-decoration: none;
     color: #ccc; /* Change the color to a different shade of white */
     margin: 0 20px;
     transition: color 0.3s;
 }
 
-nav a:hover {
+nav .a:hover {
     color: #999; /* Change the hover color accordingly */
 }
 
@@ -114,4 +122,8 @@ footer {
     object-fit: cover;
     border-radius: 50%;
     margin-bottom: 10px;
+}
+
+.nav-links {
+    margin-top: -50px;
 }
